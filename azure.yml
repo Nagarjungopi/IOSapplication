@@ -18,19 +18,11 @@ steps:
     configuration: 'Release'
     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
     xcodeVersion: 'default' # Options: 8, 9, 10, 11, 12, default, specifyPath
-
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '**'
+    SourceFolder: '$(Build.Repository.LocalPath)\IOSapplication/Calendar/'
     Contents: '**'
-    TargetFolder: '/home/ubuntu/'
-
-- task: CopyPublishBuildArtifacts@1
-  inputs:
-    CopyRoot: '/home/ubuntu/'
-    Contents: '**.tar'
-    ArtifactName: 'publish'
-    ArtifactType: 'Container'
+    TargetFolder: '$(Build.Repository.LocalPath)/hume/ubuntu'
 
 
 
