@@ -21,7 +21,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'IOSapplication/Calendar/'
+    SourceFolder: 'Calendar/'
     Contents: '**'
 - task: CopyPublishBuildArtifacts@1
   inputs:
@@ -30,6 +30,8 @@ steps:
     ArtifactName: 'publish'
     ArtifactType: 'Container'
     TargetFolder: '$(build.artifactstagingdirectory)'
+  
+
 
 
 
