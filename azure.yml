@@ -21,14 +21,16 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '/calender'
+    SourceFolder: '**'
     Contents: '**'
     TargetFolder: '/home/ubuntu/'
+
 - task: CopyPublishBuildArtifacts@1
   inputs:
     CopyRoot: '/home/ubuntu/'
     Contents: '**.tar'
     ArtifactName: 'publish'
     ArtifactType: 'Container'
+
 
 
