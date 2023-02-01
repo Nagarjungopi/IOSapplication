@@ -22,6 +22,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copying Files For Artifacets'
   inputs:
+      SourceFolder: 'Calendar'
       contents: '**/*.ipa'
       targetFolder: '$(Build.ArtifactStagingDirectory)'
       overWrite: true 
