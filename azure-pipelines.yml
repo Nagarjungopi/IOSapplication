@@ -20,13 +20,15 @@ steps:
     xcodeVersion: 'default' 
 
 - task: CopyFiles@2
+  displayName: 'Copying Files For Artifacets'
   inputs:
-        SourceFolder: 'Calendar/'
-        Contents: '**'
-        TargetFolder: '$(build.artifactstagingdirectory)'
+      contents: '**/*.ipa'
+      targetFolder: '$(Build.ArtifactStagingDirectory)'
+      overWrite: true 
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publishing the artifacts'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+     pathtoPublish: '$(build.artifactStagingDirectory)'
+     artifactName: 'drop'
+     publishLocation: 'Container'
